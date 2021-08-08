@@ -38,34 +38,34 @@
 
 ### Resimler
 #### Admin İletişim 
-![Admin İletişim  Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bak-m-Rehberi/blob/main/pethome/proje-resimleri/admin_ileti%C5%9Fim.png)
+![Admin İletişim  Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bakimi-Rehberi-Web-App/blob/main/pethome/proje-resimleri/admin_ileti%C5%9Fim.png)
 #### Admin Post Oluşturma 
-![Admin Post Oluşturma  Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bak-m-Rehberi/blob/main/pethome/proje-resimleri/admin_post_olusturma.png)
+![Admin Post Oluşturma  Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bakimi-Rehberi-Web-App/blob/main/pethome/proje-resimleri/admin_post_olusturma.png)
 #### Admin Resim Ekleme 
-![Admin Resim Ekleme  Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bak-m-Rehberi/blob/main/pethome/proje-resimleri/admin_resim_ekleme.png)
+![Admin Resim Ekleme  Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bakimi-Rehberi-Web-App/blob/main/pethome/proje-resimleri/admin_resim_ekleme.png)
 #### Admin Veteriner Ekleme 
-![Admin Veteriner Ekleme  Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bak-m-Rehberi/blob/main/pethome/proje-resimleri/admin_veteriner_ekleme.png)
+![Admin Veteriner Ekleme  Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bakimi-Rehberi-Web-App/blob/main/pethome/proje-resimleri/admin_veteriner_ekleme.png)
 #### Admin Yorum Kontrol Sayfası
-![Admin Yorum Kontrol  Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bak-m-Rehberi/blob/main/pethome/proje-resimleri/admin_yorumlar.png)
+![Admin Yorum Kontrol  Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bakimi-Rehberi-Web-App/blob/main/pethome/proje-resimleri/admin_yorumlar.png)
 #### Blog 
-![Blog  Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bak-m-Rehberi/blob/main/pethome/proje-resimleri/blog.png)
+![Blog  Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bakimi-Rehberi-Web-App/blob/main/pethome/proje-resimleri/blog.png)
 #### Galeri 
-![Galeri  Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bak-m-Rehberi/blob/main/pethome/proje-resimleri/galeri.png)
+![Galeri  Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bakimi-Rehberi-Web-App/blob/main/pethome/proje-resimleri/galeri.png)
 #### İletişim Formu 
-![İletişim Formu](https://github.com/rdvnkdyf/Evcil-Hayvan-Bak-m-Rehberi/blob/main/pethome/proje-resimleri/ileti%C5%9Fim_formu.png)
+![İletişim Formu](https://github.com/rdvnkdyf/Evcil-Hayvan-Bakimi-Rehberi-Web-App/blob/main/pethome/proje-resimleri/ileti%C5%9Fim_formu.png)
 #### İletişim Sayfasındaki Harita
-![İletişim Harita](https://github.com/rdvnkdyf/Evcil-Hayvan-Bak-m-Rehberi/blob/main/pethome/proje-resimleri/ileti%C5%9Fim_harita.png)
+![İletişim Harita](https://github.com/rdvnkdyf/Evcil-Hayvan-Bakimi-Rehberi-Web-App/blob/main/pethome/proje-resimleri/ileti%C5%9Fim_harita.png)
 #### Kayıt Ol Sayfası
-![Kayıt Ol Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bak-m-Rehberi/blob/main/pethome/proje-resimleri/kay%C4%B1tol.png)
+![Kayıt Ol Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bakimi-Rehberi-Web-App/blob/main/pethome/proje-resimleri/kay%C4%B1tol.png)
 #### Login Sayfası
-![Login Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bak-m-Rehberi/blob/main/pethome/proje-resimleri/login.png)
+![Login Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bakimi-Rehberi-Web-App/blob/main/pethome/proje-resimleri/login.png)
 #### Blog'un post sayfası 
-![Post Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bak-m-Rehberi/blob/main/pethome/proje-resimleri/post_yazi.png)
+![Post Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bakimi-Rehberi-Web-App/blob/main/pethome/proje-resimleri/post_yazi.png)
 #### Yorumlar kısmı 
-![Post Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bak-m-Rehberi/blob/main/pethome/proje-resimleri/post_yorum.png)
+![Post Sayfası](https://github.com/rdvnkdyf/Evcil-Hayvan-Bakimi-Rehberi-Web-App/blob/main/pethome/proje-resimleri/post_yorum.png)
 #### Profil Düzenle 
-![Profil Düzenle](https://github.com/rdvnkdyf/Evcil-Hayvan-Bak-m-Rehberi/blob/main/pethome/proje-resimleri/profil_d%C3%BCzenle.png)
+![Profil Düzenle](https://github.com/rdvnkdyf/Evcil-Hayvan-Bakimi-Rehberi-Web-App/blob/main/pethome/proje-resimleri/profil_d%C3%BCzenle.png)
 #### Şifre Değiştir 
-![Şifre Değiştir](https://github.com/rdvnkdyf/Evcil-Hayvan-Bak-m-Rehberi/blob/main/pethome/proje-resimleri/sifre_degistir.png)
+![Şifre Değiştir](https://github.com/rdvnkdyf/Evcil-Hayvan-Bakimi-Rehberi-Web-App/blob/main/pethome/proje-resimleri/sifre_degistir.png)
 #### Veterinerler Bölümü
-![Veterinerler Bölümü](https://github.com/rdvnkdyf/Evcil-Hayvan-Bak-m-Rehberi/blob/main/pethome/proje-resimleri/veterinerler.png)
+![Veterinerler Bölümü](https://github.com/rdvnkdyf/Evcil-Hayvan-Bakimi-Rehberi-Web-App/blob/main/pethome/proje-resimleri/veterinerler.png)
