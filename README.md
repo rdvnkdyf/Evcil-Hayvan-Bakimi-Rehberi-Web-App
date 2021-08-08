@@ -41,7 +41,7 @@
 
 # Uyarı 
 ## Harita apisi ücretsiz fakat konuma göre tam olarak istenilen sonucu vermeyebilir.
-## Harita API Google Chrome 'da güncel sürümde çalıştı diğer güncel olmayan sürümlerde çalışmayabilir.
+## Harita API Google Chrome 'da güncel sürümde çalıştı diğer güncel olmayan sürümlerde ve başka web tarayıcılarda  çalışmayabilir.
 
 ## Resimler
 #### Admin İletişim 
