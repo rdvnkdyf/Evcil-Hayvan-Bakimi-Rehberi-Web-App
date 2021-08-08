@@ -1,0 +1,114 @@
+{% include "components/header.html" %}
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/static/images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-end">
+        <div class="col-md-9 ftco-animate pb-5">
+            <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/">Ana Sayfa<i class="ion-ios-arrow-forward"></i></a></span> <span>Blog <i class="ion-ios-arrow-forward"></i></span></p>
+          <h1 class="mb-0 bread">Blog</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% block content %}
+
+
+<header class="masthead">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class=" col-md-8 col-md-10 mx-auto">
+        <div class="site-heading">
+          <h3 class=" site-heading my-4 mt-3 text-white"> Welcome to my awesome Blog </h3>
+          <p class="text-light">We Love Django As much as you do..! &nbsp
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</header>
+
+<section class="ftco-section bg-light">
+<div class="container">
+  <div class="row">
+
+    <!-- Blog Entries Column -->
+    
+      {% for post in post_list %}
+      <div class="col-sm-4">
+      <div class="row d-flex">
+        <div class="col-md-4 d-flex ftco-animate">
+          <div class="blog-entry align-self-stretch">
+          <h2 class="card-title">{{ post.title }}</h2>
+          <image src="{{post.cover.url}}" height="240px" width="320px"/>
+           <div class="text p-4">
+              <div class="meta mb-2">
+            <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}}  </p>
+
+          <p class="card-text">{{post.content|safe|slice:":200" }}</p>
+          <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Devamını Oku &rarr;</a>
+        </div>
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+      {% endfor %}
+
+    
+    
+  </div>
+</div>
+
+<!--Pagination-->
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+  {% if post_list.has_previous %}
+      <li class="page-item">
+      <a class="page-link" href="?page={{ post_list.previous_page_number }}">Previous</a>
+    </li>
+  {% else %}
+      <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+    </li>
+  {% endif %}
+
+  {% if post_list.number|add:'-4' > 1 %}
+      <li class="page-item"><a class="page-link" href="?page={{ post_list.number|add:'-5' }}">&hellip;</a></li>
+  {% endif %}
+
+  {% for i in post_list.paginator.page_range %}
+      {% if post_list.number == i %}
+          <li class="page-item active" aria-current="page">
+        <span class="page-link">
+          {{ i }}
+          <span class="sr-only">(current)</span>
+        </span>
+      </li>
+      {% elif i > post_list.number|add:'-5' and i < post_list.number|add:'5' %}
+           <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+      {% endif %}
+  {% endfor %}
+
+  {% if post_list.paginator.num_pages > post_list.number|add:'4' %}
+     <li class="page-item"><a class="page-link" href="?page={{ post_list.number|add:'5' }}">&hellip;</a></li>
+  {% endif %}
+
+  {% if post_list.has_next %}
+      <li class="page-item">
+      <a class="page-link" href="?page={{ post_list.next_page_number }}">Next</a>
+    </li>
+  {% else %}
+      <li class="page-item disabled">
+      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+    </li>
+  {% endif %}
+</ul>
+</nav>
+</section>
+<!--end of Pagination-->
+{%endblock%}
+{% include "components/footer.html" %}

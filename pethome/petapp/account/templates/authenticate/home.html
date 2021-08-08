@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+  <head>
+    <title>Pet Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+<body>
+  <div class="wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center">
+                <p class="mb-0 phone pl-md-2">
+                    <a href="#" class="mr-2"><span class="fa fa-phone mr-1"></span> +00 1234 567</a> 
+                    <a href="#"><span class="fa fa-paper-plane mr-1"></span> ridvankdyf59@gmail.com</a>
+                </p>
+            </div>
+            <div class="col-md-6 d-flex justify-content-md-end">
+                <div class="social-media">
+                <p class="mb-0 d-flex">
+                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+                    <a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+                </p>
+        </div>
+            </div>
+        </div>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+<div class="container">
+  <div class ="container">
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-danger alart-dismissable" role ="alert">
+            <button class="close" data-dismiss="alert">
+                <small><sup>x</sup></small>
+              </button>
+            {{ message }}
+          </div>
+        {% endfor%}
+      {% endif %}
+
+
+{% block content %}
+{% endblock %}
+  </div>
+    <a class="navbar-brand" href="/"><span class="flaticon-pawprint-1 mr-2"></span>Pet Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fa fa-bars"></span> Menu
+  </button>
+  <div class="collapse navbar-collapse" id="ftco-nav">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a href="/" class="nav-link">Ana Sayfa</a></li>
+        <li class="nav-item"><a href="/vet" class="nav-link">Veterinerler</a></li>
+        <li class="nav-item"><a href="/gallery" class="nav-link">Galeri</a></li>
+        <li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="/contact" class="nav-link">İletişim</a></li>
+        {# Will know if user is logged in or not#}
+      {% if user.is_authenticated %}
+      <li class="nav-item ">
+        <a class="nav-link" href="{% url 'edit_profile' %}">Profil Düzenle</a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{% url 'logout' %}"><p>{{user.username}}</p>Çıkış Yap</a>
+      </li>
+      {% else %}
+      <li class="nav-item ">
+        <a class="nav-link" href="{% url 'login' %}">Giriş Yap</a>
+      </li>
+
+        
+
+      {% endif%}
+    </ul>
+  </div>
+</div>
+</nav>
+<!-- END nav -->
+<div class="hero-wrap js-fullheight" style="background-image: url('/static/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
+        <div class="col-md-11 ftco-animate text-center">
+            <h1 class="mb-4">Çok Sevdiğimiz Dostlarımız İçin Yararlı Olan Bilgilerin Adresi Burası</h1>
+          <<p><a href="/blog" class="btn btn-primary mr-md-4 py-3 px-4">Öğrenmeye Başlayın<span class="ion-ios-arrow-forward"></span></a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="ftco-section bg-light ftco-no-pt ftco-intro">
+      <div class="container">
+          <div class="row">
+        <div class="col-md-4 d-flex align-self-stretch px-4 ftco-animate">
+          <div class="d-block services active text-center">
+            <div class="icon d-flex align-items-center justify-content-center">
+                  
+            </div>
+            <div class="media-body">
+              <h3 class="heading">Bakım Tüyoları</h3>
+              <p>Sevimli dostlarımızın bakımı yaparken zorlandığımız ve sıkıştığımız zamanları sitemizdeki kıymetli bilgiler ile son verin.</p>
+              <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
+            </div>
+          </div>      
+        </div>
+        <div class="col-md-4 d-flex align-self-stretch px-4 ftco-animate">
+          <div class="d-block services text-center">
+            <div class="icon d-flex align-items-center justify-content-center">
+                  
+            </div>
+            <div class="media-body">
+              <h3 class="heading">Dostunuza Göre Profil Oluşturun</h3>
+              <p>Evinizde beslediğiniz dostumuza göre profil oluşturduktan sonra onun hakkında yararlı bilgiler edinin.</p>
+              <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
+            </div>
+          </div>    
+        </div>
+        <div class="col-md-4 d-flex align-self-stretch px-4 ftco-animate">
+          <div class="d-block services text-center">
+            <div class="icon d-flex align-items-center justify-content-center">
+                  
+            </div>
+            <div class="media-body">
+              <h3 class="heading">Veterinerlere Yazın</h3>
+              <p>Sevimli dostlarımızın ani ve karmaşık durumlarda çevrimiçi olan veteriner arkadaşlara yazabilirsiniz.</p>
+              <a href="#" class="btn-custom d-flex align-items-center justify-content-center"><span class="fa fa-chevron-right"></span><i class="sr-only">Read more</i></a>
+            </div>
+          </div>      
+        </div>
+      </div>
+      </div>
+  </section>
+
+  <section class="ftco-section ftco-no-pt ftco-no-pb">
+      <div class="container">
+          <div class="row d-flex no-gutters">
+              <div class="col-md-5 d-flex">
+                  <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0" style="background-image:url(/static/images/about-1.jpg);">
+                  </div>
+              </div>
+              <div class="col-md-7 pl-md-5 py-md-5">
+                  <div class="heading-section pt-md-5">
+              <h2 class="mb-4">Neden Bu Uygulamayı Seçmelisiniz?</h2>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6 services-2 w-100 d-flex">
+                          <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-stethoscope"></span></div>
+                          <div class="text pl-3">
+                              <h4>Bakım Önerileri</h4>
+                              <p>Evcil hayvanlarımızın bakımında zorlandığımız noktalarda önerilerde bulunuyoruz.</p>
+                          </div>
+                      </div>
+                      <div class="col-md-6 services-2 w-100 d-flex">
+                          <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-customer-service"></span></div>
+                          <div class="text pl-3">
+                              <h4>Kullanıcı Memnuniyeti</h4>
+                              <p>Basit menüsü ile siz kullanıcıların memnun kalacağı bir uygulama.</p>
+                          </div>
+                      </div>
+                      <div class="col-md-6 services-2 w-100 d-flex">
+                          <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-emergency-call"></span></div>
+                          <div class="text pl-3">
+                              <h4>Küçük Dostlarımızın Mutluluğu</h4>
+                              <p>Bazen küçük dostlarımızın bize ne demeye çalıştığını anlatıyoruz ve onların mutluluğunu arttırıyoruz.</p>
+                          </div>
+                      </div>
+                      <div class="col-md-6 services-2 w-100 d-flex">
+                          <div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-veterinarian"></span></div>
+                          <div class="text pl-3">
+                              <h4>Veteriner Yardımı</h4>
+                              <p>Küçük dostlarımızın ani sağlık problemlerinde bloğumuzda danışacağımız veterinerlerin iletişim adresleri mevcuttur.</p>
+                          </div>
+                      </div>
+                  </div>
+          </div>
+      </div>
+      </div>
+  </section>
+
+  <section class="ftco-counter" id="section-counter">
+      <div class="container">
+              <div class="row">
+        <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+          <div class="block-18 text-center">
+           
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+          <div class="block-18 text-center">
+             
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+          <div class="block-18 text-center">
+             
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 d-flex justify-content-center counter-wrap ftco-animate">
+          <div class="block-18 text-center">
+             
+          </div>
+        </div>
+      </div>
+      </div>
+  </section>
+
+  <section class="ftco-section bg-light ftco-faqs">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 order-md-last">
+                  <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-center mb-4 mb-sm-0" style="background-image:url(/static/images/dog1.jpg);">
+                      <a href="https://www.youtube.com/watch?v=MHqZh2D7-M8&ab_channel=FunnyAnimals%27Club" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
+                          <span class="fa fa-play"></span>
+                      </a>
+                  </div>
+                  <div class="d-flex mt-3">
+                      <div class="img img-2 mr-md-2" style="background-image:url(/static/images/papagan1.jpg);"></div>
+                      <div class="img img-2 ml-md-2" style="background-image:url(/static/images/tavsan1.jpg);"></div>
+                  </div>
+              </div>
+
+              <div class="col-lg-6">
+                  <div class="heading-section mb-5 mt-5 mt-lg-0">
+              <h2 class="mb-3">Sıklıkla Sorulan Sorular</h2>
+              <p>Uygulama hakkında soru işareti olabilecek soruların cevabını vereceğiz.</p>
+                  </div>
+                  <div id="accordion" class="myaccordion w-100" aria-multiselectable="true">
+                        <div class="card">
+                          <div class="card-header p-0" id="headingOne">
+                            <h2 class="mb-0">
+                              <button href="#collapseOne" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="true" aria-controls="collapseOne">
+                                  <p class="mb-0">Evcil hayvan severler bilgileri nereden öğrenicek?</p>
+                                <i class="fa" aria-hidden="true"></i>
+                              </button>
+                            </h2>
+                          </div>
+                          <div class="collapse show" id="collapseOne" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="card-body py-3 px-0">
+                                <ol>
+                                    <li>Yararlı bilgiler,blog bölümünde yer alıyor.</li>
+                                    <li>Yararlı bilgileri gönüllü veterinerlerin yazdığı yazılardır.</li>
+                                    <li>Bu bilgiler,kafanızdaki soru işaretlerini bitirmek içindir.</li>
+                                    <li>En çok bakılan hayvan türlerinden en az bakılana kadar gerekli bilgiler mevcuttur.</li>
+                                    <li>Yeni hayvan sahiplenicek  kullanıcılar bu bilgilerle kendine güverek sahiplenecek.</li>
+                                </ol>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="card">
+                          <div class="card-header p-0" id="headingTwo" role="tab">
+                            <h2 class="mb-0">
+                              <button href="#collapseTwo" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseTwo">
+                                  <p class="mb-0">Galeri bölümü var bu nedir?</p>
+                                <i class="fa" aria-hidden="true"></i>
+                              </button>
+                            </h2>
+                          </div>
+                          <div class="collapse" id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="card-body py-3 px-0">
+                                <ol>
+                                    <li>Galeri bölümü,bakılacak evcil hayvanların fotoğrafları yer alır.</li>
+                                    <li>Sadece bakılacak hayvanlar dışında diğer hayvanların resimleri de yer alabilir.</li>
+                                    <li>Galeri bölümünün diğer bir amacı hayvan dünyasında ne kadar tür olduğunu gösterir.</li>
+                                    
+                                </ol>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="card">
+                          <div class="card-header p-0" id="headingThree" role="tab">
+                            <h2 class="mb-0">
+                              <button href="#collapseThree" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseThree">
+                                  <p class="mb-0">Veterinerler bölümü nedir?</p>
+                                <i class="fa" aria-hidden="true"></i>
+                              </button>
+                            </h2>
+                          </div>
+                          <div class="collapse" id="collapseThree" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="card-body py-3 px-0">
+                                <ol>
+                                    <li>Veterinerler bölümü,gönüllü veterinerlerin belirli saat aralığında sizlerin sorularını cevaplıyor.</li>
+                                    <li>Telefon numaraları mevcuttur.</li>
+                                    <li>Veteriner kliniğinin adresi de mevcuttur.</li>
+                                    <li>Sizlerin veteriner bulmanızın zor olduğu acil zamanlarda yardımınıza koşar.</li>
+                                    
+                                </ol>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="card">
+                          <div class="card-header p-0" id="headingFour" role="tab">
+                            <h2 class="mb-0">
+                              <button href="#collapseFour" class="d-flex py-3 px-4 align-items-center justify-content-between btn btn-link" data-parent="#accordion" data-toggle="collapse" aria-expanded="false" aria-controls="collapseFour">
+                                  <p class="mb-0">İletişim bölümü neyi amaçlar?</p>
+                                <i class="fa" aria-hidden="true"></i>
+                              </button>
+                            </h2>
+                          </div>
+                          <div class="collapse" id="collapseFour" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="card-body py-3 px-0">
+                                <p>Hizmetlerde aksaklık veya uygulamada çıkıcak hataları bize bildirebileceğiniz bir alandır.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+          </div>
+      </div>
+      </div>
+  </section>
+
+ <section class="ftco-section testimony-section" style="background-image: url('/static/images/bg_2.jpg');">
+      <div class="overlay"></div>
+    <div class="container">
+      <div class="row justify-content-center pb-5 mb-3">
+        <div class="col-md-7 heading-section text-center ftco-animate">
+          <h2>Mutlu Kullanıcılar &amp; Geri Dönüşler</h2>
+        </div>
+      </div>
+      <div class="row ftco-animate">
+        <div class="col-md-12">
+          <div class="carousel-testimony owl-carousel ftco-owl">
+            <div class="item">
+              <div class="testimony-wrap py-4">
+                  <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                <div class="text">
+                  <p class="mb-4">Bu uygulama ile yoğun iş tempoma rağmen baktığım küçük dostumla ilgilenip ne sorunu olduğunu artık bilebiliyorum.</p>
+                  <div class="d-flex align-items-center">
+                      <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                      <div class="pl-3">
+                          <p class="name">Faruk Yılmaz</p>
+                          <span class="position">Satış Temsilcisi</span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="testimony-wrap py-4">
+                  <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                <div class="text">
+                  <p class="mb-4">Bu uygulama ile yoğun iş tempoma rağmen baktığım küçük dostumla ilgilenip ne sorunu olduğunu artık bilebiliyorum.</p>
+                  <div class="d-flex align-items-center">
+                      <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                      <div class="pl-3">
+                          <p class="name">Faruk Yılmaz</p>
+                          <span class="position">Satış Temsilcisi</span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            
+            
+            <div class="item">
+              <div class="testimony-wrap py-4">
+                  <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div>
+                <div class="text">
+                  <p class="mb-4">Bu uygulama ile yoğun iş tempoma rağmen baktığım küçük dostumla ilgilenip ne sorunu olduğunu artık bilebiliyorum.</p>
+                  <div class="d-flex align-items-center">
+                      <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                      <div class="pl-3">
+                          <p class="name">Faruk Yılmaz</p>
+                          <span class="position">Satış Temsilcisi</span>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--<section class="ftco-section bg-light">
+      <div class="container">
+          <div class="row justify-content-center pb-5 mb-3">
+        <div class="col-md-7 heading-section text-center ftco-animate">
+          <h2>Affordable Packages</h2>
+        </div>
+      </div>
+          <div class="row">
+              <div class="col-md-4 ftco-animate">
+            <div class="block-7">
+                <div class="img" style="background-image: url(/static/images/pricing-1.jpg);"></div>
+              <div class="text-center p-4">
+                  <span class="excerpt d-block">Personal</span>
+                  <span class="price"><sup>$</sup> <span class="number">49</span> <sub>/mos</sub></span>
+              
+                  <ul class="pricing-text mb-5">
+                    <li><span class="fa fa-check mr-2"></span>5 Dog Walk</li>
+                    <li><span class="fa fa-check mr-2"></span>3 Vet Visit</li>
+                    <li><span class="fa fa-check mr-2"></span>3 Pet Spa</li>
+                    <li><span class="fa fa-check mr-2"></span>Free Supports</li>
+                  </ul>
+
+                  <a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="block-7">
+                <div class="img" style="background-image: url(/static/images/pricing-2.jpg);"></div>
+              <div class="text-center p-4">
+                  <span class="excerpt d-block">Business</span>
+                  <span class="price"><sup>$</sup> <span class="number">79</span> <sub>/mos</sub></span>
+                  
+                  <ul class="pricing-text mb-5">
+                    <li><span class="fa fa-check mr-2"></span>5 Dog Walk</li>
+                    <li><span class="fa fa-check mr-2"></span>3 Vet Visit</li>
+                    <li><span class="fa fa-check mr-2"></span>3 Pet Spa</li>
+                    <li><span class="fa fa-check mr-2"></span>Free Supports</li>
+                  </ul>
+
+                  <a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ftco-animate">
+            <div class="block-7">
+                <div class="img" style="background-image: url(/static/images/pricing-3.jpg);"></div>
+              <div class="text-center p-4">
+                  <span class="excerpt d-block">Ultimate</span>
+                  <span class="price"><sup>$</sup> <span class="number">109</span> <sub>/mos</sub></span>
+                  
+                  <ul class="pricing-text mb-5">
+                    <li><span class="fa fa-check mr-2"></span>5 Dog Walk</li>
+                    <li><span class="fa fa-check mr-2"></span>3 Vet Visit</li>
+                    <li><span class="fa fa-check mr-2"></span>3 Pet Spa</li>
+                    <li><span class="fa fa-check mr-2"></span>Free Supports</li>
+                  </ul>
+
+                  <a href="#" class="btn btn-primary d-block px-2 py-3">Get Started</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>-->
+      
+  <section class="ftco-section bg-light">
+    
+    <div class="container">
+      <h2>Resim Galerisi</h2>
+      <div class="row">
+        
+        <!-- Blog Entries Column -->
+        
+          {% for gallery in gallery_list %}
+          <div class="col-sm-4">
+          <div class="row d-flex"> 
+            
+            <div class="col-md-4 d-flex ftco-animate">
+              <div class="blog-entry align-self-stretch">
+               
+              <div class="text p-4"><h2 class="card-title">{{ gallery.title }}</h2></div>
+              
+               <div class="text p-4">
+                  <div class="meta mb-2">
+                    <image src="{{gallery.cover.url}}" height="240px" width="320px"/>
+    
+             
+            </div>
+            </div>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+          {% endfor %}
+    
+        
+        
+      </div>
+    </div>
+    
+    <!--Pagination-->
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+      {% if gallery_list.has_previous %}
+          <li class="page-item">
+          <a class="page-link" href="?page={{ gallery_list.previous_page_number }}">Previous</a>
+        </li>
+      {% else %}
+          <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+      {% endif %}
+    
+      {% if gallery_list.number|add:'-4' > 1 %}
+          <li class="page-item"><a class="page-link" href="?page={{ gallery_list.number|add:'-5' }}">&hellip;</a></li>
+      {% endif %}
+    
+      {% for i in gallery_list.paginator.page_range %}
+          {% if gallery_list.number == i %}
+              <li class="page-item active" aria-current="page">
+            <span class="page-link">
+              {{ i }}
+              <span class="sr-only">(current)</span>
+            </span>
+          </li>
+          {% elif i > gallery_list.number|add:'-5' and i < gallery_list.number|add:'5' %}
+               <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+          {% endif %}
+      {% endfor %}
+    
+      {% if gallery_list.paginator.num_pages > gallery_list.number|add:'4' %}
+         <li class="page-item"><a class="page-link" href="?page={{ gallery_list.number|add:'5' }}">&hellip;</a></li>
+      {% endif %}
+    
+      {% if gallery_list.has_next %}
+          <li class="page-item">
+          <a class="page-link" href="?page={{ gallery_list.next_page_number }}">Next</a>
+        </li>
+      {% else %}
+          <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+        </li>
+      {% endif %}
+    </ul>
+    </nav>
+    </section>
+
+    
+
+  <section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb img" style="background-image: url(/static/images/bg_3.jpg);">
+          <div class="overlay"></div>
+      <div class="container">
+          <div class="row d-md-flex justify-content-end">
+              <div class="col-md-12 col-lg-6 half p-3 py-5 pl-lg-5 ftco-animate">
+                  <h2 class="mb-4">Free Consultation</h2>
+                  <form action="#" class="appointment">
+                      <div class="row">
+                          <div class="col-md-12">
+                                  <div class="form-group">
+                                  <div class="form-field">
+                                <div class="select-wrap">
+                        <div class="icon"><span class="fa fa-chevron-down"></span></div>
+                        <select name="" id="" class="form-control">
+                            <option value="">Select services</option>
+                          <option value="">Cat Sitting</option>
+                          <option value="">Dog Walk</option>
+                          <option value="">Pet Spa</option>
+                          <option value="">Pet Grooming</option>
+                          <option value="">Pet Daycare</option>
+                        </select>
+                      </div>
+                        </div>
+                              </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name">
+                      </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Vehicle number">
+                      </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                  <div class="input-wrap">
+                              <div class="icon"><span class="fa fa-calendar"></span></div>
+                              <input type="text" class="form-control appointment_date" placeholder="Date">
+                          </div>
+                              </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                  <div class="input-wrap">
+                              <div class="icon"><span class="fa fa-clock-o"></span></div>
+                              <input type="text" class="form-control appointment_time" placeholder="Time">
+                          </div>
+                              </div>
+                              </div>
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                        <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                      </div>
+                              </div>
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                        <input type="submit" value="Send message" class="btn btn-primary py-3 px-4">
+                      </div>
+                              </div>
+                      </div>
+            </form>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <h2 class="footer-heading">Pet Home</h2>
+                <p>Pet Home,hayvan severlerin yeni durağı.Pet Home ile sevimli dostlarımızın hayatları hakkında bilgi edinin.</p>
+                <ul class="ftco-footer-social p-0">
+      <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="fa fa-twitter"></span></a></li>
+      <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>
+      <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="fa fa-instagram"></span></a></li>
+    </ul>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <h2 class="footer-heading">Son Haberler</h2>
+                <p><a href="/blog">Gönüllü veterinerlerin verimli bilgilerini okumaya başlayın.</a></p>
+            </div>
+            <div class="col-md-6 col-lg-3 pl-lg-5 mb-4 mb-md-0">
+                <h2 class="footer-heading">Hızlı Linkler</h2>
+                <ul class="list-unstyled">
+                    <li><a href="/" class="py-2 d-block">Ana Sayfa</a></li>
+                    <li><a href="/vet" class="py-2 d-block">Veterinerler</a></li>
+                    <li><a href="/gallery" class="py-2 d-block">Galeri</a></li>
+                    <li><a href="/blog" class="py-2 d-block">Blog</a></li>
+                    <li><a href="/contact" class="py-2 d-block">İletişim</a></li>
+    </ul>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <h2 class="footer-heading">Sorunuz var mı?</h2>
+                <div class="block-23 mb-3">
+      <ul>
+        <li><span class="icon fa fa-map"></span><span class="text">6900 Krumovgrad, Bulgaristan</span></li>
+        <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+        <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">info@yourdomain.com</span></a></li>
+      </ul>
+    </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+  <div class="col-md-12 text-center">
+
+    <p class="copyright">
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> </p>
+  </div>
+</div>
+    </div>
+</footer>
+
+
+
+
+<!-- loader -->
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+<script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+<script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/scrollax.min.js' %}"></script>
+
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
