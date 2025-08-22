@@ -1,10 +1,7 @@
 # Evcil-Hayvan-Bakimi-Rehberi-Web-App
 ## İstenilen Uygulama 
   ### Evcil hayvan bakım rehberi web sitesi (Evcil hayvan besleyenlerin hayatını kolaylaştıracak bilgilerin yer aldığı ve en yakın veteriner,barınak gibi alanlari gösteren uygulama)
-## Uygulamadaki kullanıcı isimleri ve parolaları
-### username:admin  parola:r22031998r                 admin SUPER YETKİLİ KULLANICI
-### username:kadayifcir  parola:r22031998r
-### username:ridvanyapti  parola:$veyBG=G
+
 
 ## Uygulamanın Teknik Bilgisi 
 #### Uygulamada  django,mysql,bootstrap ve mapbox  api kullanıldı.
